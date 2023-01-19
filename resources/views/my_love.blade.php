@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('dist/css/my_love.css') }}">
-    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="{{ asset('dist/img/LinggKat.jpg') }}"/>
     <title>My Love is Lingg</title>
 </head>
 <body>
@@ -15,7 +15,7 @@
 
     <div id="clock-box">
         <div id="clock">
-            <date>0 DAYS</date>
+            <date>{{ $diffInDays }} DAYS</date>
             <time>00:00:00</time>
         </div>
     </div>
@@ -26,7 +26,7 @@
             <p>Dương Ngọc Linh</p>
         </div>
         <div id="heart">
-            ❤<anni>...</anni>
+            ❤<anni>{{ \Carbon\Carbon::parse($dayStart)->format('Y-m-d') }}</anni>
         </div>
         <div class="two">
             <img src="{{ asset('dist/img/Bao.jpg') }}" class="avt">
@@ -39,7 +39,12 @@
     </div>
     <footer>Thank you for your love 💕</footer>
 </div>
-
 <script src="{{ asset('dist/js/my_love.js') }}"></script>
+<script src="{{ asset('dist/js/snow.js') }}"></script>
+<script>
+    const snow = new SNOW();
+</script>
+
+
 </body>
 </html>
